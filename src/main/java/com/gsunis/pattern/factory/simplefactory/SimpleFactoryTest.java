@@ -1,5 +1,9 @@
 package com.gsunis.pattern.factory.simplefactory;
 
+import com.gsunis.pattern.factory.IDataBase;
+import com.gsunis.pattern.factory.MysqlDataBase;
+import com.gsunis.pattern.factory.OracleDataBase;
+
 /**
  * 描述 ：
  *
@@ -12,4 +16,21 @@ package com.gsunis.pattern.factory.simplefactory;
  * @see :[相关类/方法]
  */
 public class SimpleFactoryTest {
+    public static void main(String[] args) {
+
+//        IDataBase dataBase = new MysqlDataBase();
+//        dataBase.getConnection();
+
+//        DbFactory dbFactory = new DbFactory();
+//        IDataBase mysql = dbFactory.create("oracle");
+//        mysql.getConnection();
+
+//        DbFactory dbFactory  = new DbFactory();
+//        IDataBase dataBase = dbFactory.create("com.gsunis.pattern.factory.MysqlDataBase");
+//        dataBase.getConnection();
+
+        DbFactory dbFactory  = new DbFactory();
+        IDataBase dataBase = dbFactory.create(OracleDataBase.class);
+        dataBase.getConnection();
+    }
 }

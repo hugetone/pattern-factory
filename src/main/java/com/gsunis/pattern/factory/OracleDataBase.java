@@ -11,5 +11,8 @@ package com.gsunis.pattern.factory;
  * @update : 修改人，修改时间，修改内容
  * @see :[相关类/方法]
  */
-public class OracleDataBase {
+public class OracleDataBase implements IDataBase {
+    public void getConnection() {
+        System.out.println("获取Oracle连接");
+    }
 }
